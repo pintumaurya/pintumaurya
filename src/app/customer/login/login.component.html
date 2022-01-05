@@ -1,0 +1,63 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+
+  <mat-card class="box">
+    <mat-card-header>
+      <mat-card-title>Sign In</mat-card-title>
+    </mat-card-header>
+
+    <form name="form" class="example-form" #tf="ngForm">
+      <mat-card-content>
+        <mat-form-field class="example-full-width">
+          <input matInput name="username" placeholder="Username" [(ngModel)]="signInFormValue.username"
+            #username="ngModel" [ngClass]="{ 'is-invalid': tf.submitted && username.invalid }" required>
+          <mat-error *ngIf="isError" class="invalid-feedback">
+            Username is required
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput name="password" placeholder="Password" [(ngModel)]="signInFormValue.password"
+            #password="ngModel" [ngClass]="{ 'is-invalid': tf.submitted && password.invalid }" required minlength="5"
+            togglePassword>
+          <mat-error *ngIf="isError" class="invalid-feedback">
+            Password must be
+            at least 8 characters
+          </mat-error>
+        </mat-form-field>
+
+        <div class="d-flex justify-content-around">
+          <section class="example-section">
+            <mat-checkbox class="example-margin">Remember me</mat-checkbox>
+          </section>
+          <div>
+            <a href="">Forgot password?</a>
+          </div>
+        </div>
+
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-stroked-button color="accent" class="btn-block" (click)="onSubmitSignIn()">Log in</button>
+      </mat-card-actions>
+
+      <p>Don't have an account?
+        <a class="pointer" routerLink="/signup">Create Account</a>
+      </p>
+
+      <p>or sign in with:</p>
+      <a type="button" class="light-blue-text mx-2">
+        <a href="#"><i class="ti-facebook"></i></a>
+      </a>
+      <a type="button" class="light-blue-text mx-2">
+        <a href="#"><i class="ti-twitter-alt"></i></a>
+      </a>
+      <a type="button" class="light-blue-text mx-2">
+        <a href="#"><i class="ti-linkedin"></i></a>
+      </a>
+      <a type="button" class="light-blue-text mx-2">
+        <a href="#"><i class="ti-google"></i></a>
+      </a>
+
+    </form>
+  </mat-card>
+
+</div>

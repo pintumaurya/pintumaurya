@@ -1,0 +1,205 @@
+.lan {
+    width: 300px;
+}
+
+.signin {
+    padding-right: 10px;
+    margin-left: -21px;
+}
+
+.nav-item1 {
+    background: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.nav-item1 .nav-depart {
+    float: left;
+}
+
+.nav-item1 .nav-depart .depart-btn {
+    background: #3b3b3b;
+    color: #ffffff;
+    padding: 14px 84px 14px 18px;
+    cursor: pointer;
+    position: relative;
+}
+
+.nav-item1 .nav-depart .depart-btn:hover .depart-hover {
+    top: 52px;
+    opacity: 1;
+    visibility: visible;
+    z-index: 99;
+}
+
+.nav-item1 .nav-depart .depart-btn:before {
+    position: absolute;
+    color: #ffffff;
+    right: 20px;
+    top: 13px;
+    content: "";
+    font-family: FontAwesome;
+    font-size: 18px;
+}
+
+.nav-item1 .nav-depart .depart-btn i {
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.nav-item1 .nav-depart .depart-btn span {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-left: 16px;
+}
+
+.nav-item1 .nav-depart .depart-btn .depart-hover {
+    position: absolute;
+    width: 100%;
+    background: #fff;
+    left: 0;
+    top: 62px;
+    opacity: 0;
+    visibility: hidden;
+    padding-bottom: 29px;
+    -webkit-box-shadow: 0 13px 32px rgba(51, 51, 51, 0.1);
+    box-shadow: 0 13px 32px rgba(51, 51, 51, 0.1);
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.nav-item1 .nav-depart .depart-btn .depart-hover li {
+    list-style: none;
+}
+
+.nav-item1 .nav-depart .depart-btn .depart-hover li.active a {
+    color: #e7ab3c;
+}
+
+.nav-item1 .nav-depart .depart-btn .depart-hover li a {
+    display: block;
+    font-size: 16px;
+    color: #000000;
+    padding-left: 40px;
+    padding-top: 16px;
+    padding-right: 30px;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.nav-item1 .nav-depart .depart-btn .depart-hover li a:hover {
+    color: #e7ab3c;
+}
+
+.nav-item1 .nav-menu1 {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    position: relative;
+}
+
+.nav-item1 .nav-menu1 li {
+    list-style: none;
+    display: inline-block;
+    margin-left: -5px;
+    position: relative;
+}
+
+.nav-item1 .nav-menu1 li.active a {
+    background: #e7ab3c;
+}
+
+.nav-item1 .nav-menu1 li a {
+    font-size: 14px;
+    font-weight: 700;
+    display: block;
+    color: black;
+    // border-right: 2px solid #3b3b3b;
+    text-transform: uppercase;
+    padding: 16px 42px 15px;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.nav-item1 .nav-menu1 li:hover > a {
+    background: none;
+}
+
+.nav-item1 .nav-menu1 li:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    top: 52px;
+}
+
+.nav-item1 .nav-menu1 li .dropdown {
+    position: absolute;
+    right: 0;
+    top: 82px;
+    width: 200px;
+    z-index: 99;
+    background: #252525;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.nav-item1 .nav-menu1 li .dropdown li {
+    display: block;
+    margin-left: 0;
+}
+
+.nav-item1 .nav-menu1 li .dropdown li:hover > a {
+    background: transparent;
+    color: #e7ab3c;
+}
+
+.nav-item1 .nav-menu1 li .dropdown li a {
+    border-right: 0;
+    padding: 13px 20px 12px 30px;
+    text-transform: capitalize;
+}
+
+/* ------------------------------ Responsive Media Styles ---------------------------- */
+
+@media only screen and (min-width: 1200px) and (max-width: 1920px) {
+    .nav-item11 .nav-menu11 li a {
+        padding: 16px 45px 15px;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .nav-item1 .nav-menu1 li a {
+        padding: 16px 26px 15px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .nav-item1 .nav-depart .depart-btn {
+        padding: 14px 40px 14px 18px;
+    }
+    .nav-item1 .nav-menu1 li a {
+        padding: 16px 10px 15px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .nav-item1 .nav-depart .depart-btn {
+        padding: 14px 50px 14px 18px;
+    }
+    .nav-item1 {
+        background: transparent;
+    }
+    .nav-item1 .nav-menu1 {
+        display: none;
+    }
+    .nav-item1 .nav-depart {
+        display: none;
+    }
+}
