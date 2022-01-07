@@ -62,36 +62,40 @@ export class UserProfileComponent implements OnInit {
       state: [''],
       pinCode: [''],
       gender: ['', Validators.required],
-      uploadPhoto: [],
+      // uploadPhoto: [],
     });
   }
 
   get rf() { return this.userProfileForm.controls; }
 
+  public errorHandling = (control: string, error: string) => {
+    return this.userProfileForm.controls[control].hasError(error);
+  }
+
   updateProfile() {
-    this.userDetails = new FormData();
-    this.userId = "2b938390-4df6-4210-8204-753e7d3f9a0a";
+    let userDetails: FormData = new FormData();
+    this.userId = "d6df6735-7ff8-4a4e-bfa8-10c02d0e91f3";
     this.genderValidation();
 
-    console.log('name', this.userProfileForm.value.name);
+    console.log('name', this.userProfileForm);
 
-    this.userDetails.append("UserName", this.userProfileForm.value.name);
-    this.userDetails.append("Age", this.userProfileForm.value.age);
-    this.userDetails.append("MobileNo", this.userProfileForm.value.mobileNo);
-    this.userDetails.append("DateOfBirth", this.userProfileForm.value.dob);
-    this.userDetails.append("Email", this.userProfileForm.value.dob);
-    this.userDetails.append("Password", this.userProfileForm.value.password);
-    this.userDetails.append("Address", this.userProfileForm.value.address);
-    this.userDetails.append("City", this.userProfileForm.value.city);
-    this.userDetails.append("State", this.userProfileForm.value.state);
-    this.userDetails.append("Gender", this.userProfileForm.value.pinCode);
-    this.userDetails.append("gender", this.userProfileForm.value.gender);
-    this.userDetails.append("Image", this.imageSrc)
+    userDetails.append('UserName', JSON.stringify(this.userProfileForm.value.name));
+    userDetails.append('Age', JSON.stringify(this.userProfileForm.value.age));
+    userDetails.append('MobileNo', JSON.stringify(this.userProfileForm.value.mobileNo));
+    userDetails.append('DateOfBirth', JSON.stringify(this.userProfileForm.value.dob));
+    userDetails.append('Email', JSON.stringify(this.userProfileForm.value.email));
+    userDetails.append('Password', JSON.stringify(this.userProfileForm.value.password));
+    userDetails.append('Address', JSON.stringify(this.userProfileForm.value.address));
+    userDetails.append('City', JSON.stringify(this.userProfileForm.value.city));
+    userDetails.append('State', JSON.stringify(this.userProfileForm.value.state));
+    userDetails.append('Pincode', JSON.stringify(this.userProfileForm.value.pinCode));
+    userDetails.append('Gender', JSON.stringify(this.userProfileForm.value.gender));
+    userDetails.append('Image', this.imageSrc)
     // formData.append("name", this.userProfileForm.get('name').value);
     // formData.append("avatar", this.userProfileForm.get('avatar').value);
 
-    console.log('formData', JSON.stringify(this.userDetails));
-    console.log(this.userDetails.getAll('mycustom'));
+    console.log('formData', userDetails);
+    console.log(userDetails.getAll('mycustom'));
 
     // if (this.userProfileForm.valid == true) {
     //   console.log('calling');
@@ -116,21 +120,18 @@ export class UserProfileComponent implements OnInit {
     //   console.log('rf', this.userProfileForm);
     //   console.log('userDetails', this.userDetails);
 
-    this.apiService.userProfile(this.userId, this.userDetails).subscribe(data => {
-      console.log('data', data);
+    // this.apiService.userProfile(this.userId, this.userDetails).subscribe(data => {
+    //   console.log('data', data);
 
-    }, err => {
-      this.toastr.error("Internal server Error!");
-    });
+    // },
+    //  err => {
+    // this.toastr.error("Internal server Error!");
+    // });
 
     // }
     // else {
     //   console.log('error calling');
     // }
-  }
-
-  public errorHandling = (control: string, error: string) => {
-    return this.userProfileForm.controls[control].hasError(error);
   }
 
   // selectFiles(event: any): void {

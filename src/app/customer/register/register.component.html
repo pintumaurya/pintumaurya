@@ -8,15 +8,16 @@
 
             <mat-card-content>
                 <mat-form-field class="example-full-width">
-                    <input matInput name="username" placeholder="Username" [(ngModel)]="signupFormValue.username"
-                        #username="ngModel" [ngClass]="{ 'is-invalid': tf.submitted && username.invalid }" required>
+                    <input matInput name="username" type="text" placeholder="Username"
+                        [(ngModel)]="signupFormValue.username" #username="ngModel"
+                        [ngClass]="{ 'is-invalid': tf.submitted && username.invalid }" required>
                     <mat-error *ngIf="isError" class="invalid-feedback">
                         Username is required
                     </mat-error>
                 </mat-form-field>
 
                 <mat-form-field class="example-full-width">
-                    <input matInput name="email" placeholder="Email" [(ngModel)]="signupFormValue.email"
+                    <input matInput name="email" type="email" placeholder="Email" [(ngModel)]="signupFormValue.email"
                         #email="ngModel" [ngClass]="{ 'is-invalid': tf.submitted && email.invalid }" required>
                     <mat-error *ngIf="isError" class="invalid-feedback">
                         Email is required
@@ -24,9 +25,10 @@
                 </mat-form-field>
 
                 <mat-form-field class="example-full-width">
-                    <input matInput name="password" placeholder="Password" [(ngModel)]="signupFormValue.password"
-                        #password="ngModel" [ngClass]="{ 'is-invalid': tf.submitted && password.invalid }" required
-                        minlength="5" togglePassword>
+                    <input matInput name="password" type="password" placeholder="Password"
+                        [(ngModel)]="signupFormValue.password" #password="ngModel"
+                        [ngClass]="{ 'is-invalid': tf.submitted && password.invalid }" required minlength="5"
+                        togglePassword>
                     <mat-error *ngIf="isError" class="invalid-feedback">
                         Password must be
                         at least 8 characters

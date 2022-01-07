@@ -2,8 +2,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-10 offset-md-1">
-                <h2 class="text-center">Update User Profile</h2>
-                <form [formGroup]="userProfileForm" (ngSubmit)="updateProfile()">
+                <h2 class="text-center">User Profile</h2>
+                <form [formGroup]="userProfileForm">
                     <mat-card>
                         <div class="example-container">
                             <mat-form-field appearance="fill" class="width-100">
@@ -30,7 +30,7 @@
                                 <mat-label>Email</mat-label>
                                 <input type="email" matInput placeholder="Email" formControlName="email">
                                 <mat-error *ngIf="errorHandling('email', 'required')">
-                                    Email is required.
+                                    Email is required123.
                                 </mat-error>
                             </mat-form-field>
                             <br>
@@ -119,7 +119,8 @@
                         </div>
                     </mat-card>
                     <div class="form-group">
-                        <button class="btn btn-primary">Update Your Profile</button>
+                        <button class="btn btn-primary" type="submit" (click)="updateProfile()">Update Your
+                            Profile</button>
                     </div>
                 </form>
             </div>

@@ -42,12 +42,12 @@ export class RegisterComponent implements OnInit {
       this.isError = false;
       this.signupService.userRegister(user).subscribe(data => {
         this.sharedService.userdata = data;
-        this.clearModel();
-        this.router.navigate(['/signin']);
-        if (data.success == false) {
+        if (data.Success == false) {
           this.toastr.error(data.Message);
         } else {
           this.toastr.success(data.Message);
+          this.router.navigate(['/signin']);
+          this.clearModel();
         }
       }, err => {
         this.toastr.error("Internal server Error!");

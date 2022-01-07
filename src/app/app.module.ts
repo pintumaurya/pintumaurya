@@ -16,7 +16,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { RegisterComponent } from './customer/register/register.component';
 import { LoginComponent } from './customer/login/login.component';
-import { SharedService } from './shared/services/shared.service';
+// import { SharedService } from './shared/services/shared.service';
 import { PagenotfoundComponent } from "./shared/layouts/pagenotfound/pagenotfound.component";
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatMenuModule } from '@angular/material/menu';
@@ -26,6 +26,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { apiService } from './shared/services/apiService.service';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     MatGridListModule,
     MatDatepickerModule,
   ],
-  providers: [SharedService],
+  providers: [apiService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
